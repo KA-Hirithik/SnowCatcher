@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #87CEEB, #ffffff);
+}
+
+#game-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.snowflake {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  top: 0;
+  animation: fall linear infinite;
+  z-index: 1; 
+  pointer-events: auto; 
+}
+
+@keyframes fall {
+  0% {
+      top: -20px;
+  }
+  100% {
+      top: 100vh;
+  }
+}
+
+#score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  color: #333;
+  user-select: none;
+  z-index: 2; /* Ensure score is above snowflakes */
+  pointer-events: none; /* Disable pointer events for score */
+}
